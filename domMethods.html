@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Dom methods</title>
+</head>
+
+<body>
+    <h1> Javascript Dom Methods</h1>
+
+    <form autocomplete="on" name="myForm" action="" method="post" onsubmit="">
+        Name:
+        <input type="text" name="fname" id="fname">
+        <input type="Submit" value="Submit"><br><br> Gender:
+        <input type="radio" name="Gender" value="male" id="Gender"> Male
+        <input type="radio" name="Gender" value="female"> Female<br><br> Dom Methods:
+        <input type="checkbox" value="getElementId" class="_value" id="dom">getElementId<br>
+        <input type="checkbox" value="getElementsByTagName" class="_value">getElementsByTagclass<br>
+        <input type="checkbox" value="node" class="_value">node<br>
+        <input type="checkbox" value="createElement" class="_value">createElement<br>
+        <input type="checkbox" value="appendChild" class="_value">appendChild<br><br>
+
+        <select name="place" id="place">
+              <option value="select">select</option>
+              <option value="gajwel">gajwel</option>
+              <option value="pune">pune</option>
+              <option value="hyderabed">hyderbed</option>              
+            </select>
+
+        <br><br>
+        <input type="submit" id="btn" name="btn" onclick="myFunction();return false">
+        <input type="reset" id="reset" name="reset">
+    </form>
+
+    <p id="d1"></p>
+    <p id="d2"></p>
+    <p id="d3"></p>
+    <p id="d4"></p>
+    <p id="d5"></p>
+
+    <script>
+        function myFunction() {
+            const ele = document.getElementsByClassName('_value')
+            Array.from(ele).forEach((val) => {
+                if (val.checked) {
+                    console.log(val.defaultValue);
+                    document.getElementById('d3').innerHTML = val.defaultValue
+                }
+            })
+            console.log(ele, '51::')
+            document.getElementById("d1").innerHTML = document.myForm.fname.value;
+            document.getElementById("d2").innerHTML = document.myForm.Gender.value;
+            document.getElementById('d4').innerHTML = document.myForm.place.value;
+
+
+        }
+    </script>
+
+</body>
+
+</html>
